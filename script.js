@@ -72,9 +72,9 @@ window.addEventListener("keydown", playSound);
 drumPads.forEach(drumPad =>
     drumPad.addEventListener("transitionend", removeTransition)
 );
-// nav buttons sound effect
-// function clickSound() {
-//     const clickfx = document.getElementById('click-sound');
-//     clickfx.currentTime = 0; //start from beginning if played again quickly
-//     clickfx.play();
-// }
+
+// Additional for mobile touch
+document.querySelectorAll('.drum').forEach(function(drum) {
+  drum.addEventListener('click', playSound);
+  drum.addEventListener('touchstart', playSound); // Add touch event for mobile
+});
